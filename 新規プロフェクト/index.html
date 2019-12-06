@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>プロジェクト演習２</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/bootstrap4-executive-suite.min.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Oswald|Source+Sans+Pro" rel="stylesheet">
+
+
+  </head>
+  <body>
+
+  <div class="bg-dark navbar-dark text-white">
+    <div class="container">
+      <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a href="index.html" class="pl-md-0 p-3 text-white">ホーム</a>
+            <a href="app.html" class="p-3 text-decoration-none text-white">詳細</a>
+            <a href="form.html" class="p-3 text-decoration-none text-white">その他</a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+
+
+
+
+<div class="jumbotron py-0 bg-light text-dark mb-0 radius-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 mr-auto d-none d-xl-block">
+        <div class="executive-image">
+          <img src="images/executive-image.jpg"
+               width="445"
+               srcset="images/executive-image.jpg 445w, images/executive-image@2x.jpg 890w"
+               alt="Rockefeller Building">
+
+        </div>
+      </div>
+      <div class="col-xl-6 ml-auto jumbo-vertical-center">
+        <div>
+
+          <h1 class="display-3 mb-2 display-fix">辻堂海浜公園</h1>
+          <span class="text-merriweather" style="border-bottom: 1px solid">辻堂海浜公園のフロントページ</span>
+
+          <div class="mt-3">
+            <a href="#!"
+               class="btn btn-outline-dark btn-lg my-2 text-oswald btn-wide">
+              <span>詳細ページへ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container py-5">
+  <div style="text-align: center" id="first-text"></div>
+  <div style="text-align: center" id="second-text"></div>
+  <div style="text-align: center" id="3-text"></div>
+  <div style="text-align: center" id="4"></div>
+  <div style="margin: 0 auto" id="f-p">
+
+  </div>
+</div>
+
+<footer>
+   (C) All Right Reserved, 2015-2019, Project A
+  </footer>
+
+
+<!-- <script type="text/javascript">
+
+  /* Ready */
+  $(document).ready(function() {
+      $('#filter').click(function () {
+          filterRows($('input').val());
+      });
+      $('#clear').click(function () {
+          $('input').val('')
+          clearRows($('input').val());
+      });
+  });
+/* Associate data to specific DOM-elements */
+$('#row1').data({ id:1, type:'rowheader'});
+    $('#row2').data({ id:2, type:'mexican', stars:3, area:'north'});
+    $('#row3').data({ id:3, type:'italian', stars:4, area:'north'});
+    $('#row4').data({ id:4, type:'seafood', stars:5, area:'downtown'});
+    $('#row5').data({ id:5, type:'bbq',     stars:3, area:'west'});
+    $('#row6').data({ id:6, type:'tex mex', stars:2, area:'south'});
+/* Clear Rows */
+function clearRows(filterString) {
+        // For each row, that is, div in #rows of class .row
+        $.each($('#rows .row'), function(i, row) {
+            $(row).show();
+        });
+    }
+
+    /* Filter Rows */
+    function filterRows(filterString) {
+
+        // For each row, that is, div in #rows of class .row
+        $.each($('#rows .row'), function(i, row) {
+            var $row = $(row); // Get the row div element
+            var rowData = $row.data(); // Get the data associated with the row
+div element
+            var id = rowData.id; // Get the row id
+            var type = rowData.type;
+            if (filterString.length == 0) {
+                $row.show();
+            } else {
+                if (type.toLowerCase().search("rowheader") != -1) {
+                    $row.show();
+                } else {
+                    if (filterByType(filterString, rowData.type) ||
+                        filterByRating(filterString, rowData.stars) ||
+                        filterByLocation(filterString, rowData.area)) {
+                        $row.show();
+                    } else {
+                        $row.hide();
+                    }
+                }
+            }
+        });
+    }
+/* Filter Rows by Type */
+function filterByType(filterString, type) {
+        var p1 = RegExp(type);
+        if (p1.test(filterString)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /* Filter Rows by Rating */
+    function filterByRating(filterString, stars) {
+        if (filterString.toLowerCase().search('star') != -1) {
+            var value = filterString.replace(/[^0-9]/g,'');
+            if (stars >= value) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    /* Filter Rows by Location */
+    function filterByLocation(filterString, area) {
+        var p1 = RegExp(area);
+        if (p1.test(filterString)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+</script>
+
+
+
+
+<div id="sidebar">
+  Filter by type, location or rating:
+  <input type="text" />
+  <button id="filter">Filter</button>
+  <button id="clear">Clear</button>
+  <p>
+  To keep the sample code simple, the search terms are "ORed". Example
+"seafood 2 stars downtown" which returns all rows that match seafood OR 2+ stars
+OR in downtown.
+  </p>
+</div>
+
+<div id="rows">
+  <p>
+  This sample web page shows how to use the <code>jQuery.data()</code>
+method. It uses a CSS-based table and a filter function that filters rows based on the
+data associated with the particular row DOM-element.
+  </p>
+
+  <div class="row" id="row1">
+      <div class="cell"><b>Restaurant</b></div>
+      <div class="cell"><b>Type of Food</b></div>
+      <div class="cell"><b>Location</b></div>
+      <div class="cell"><b>Rating</b></div>
+  </div>
+
+  <div class="row" id="row2">
+      <div class="cell">Manuel's</div>
+      <div class="cell">Mexican</div>
+      <div class="cell">Arboretum Area, Downtown</div>
+      <div class="cell">3 Stars</div>
+  </div>
+
+  <div class="row" id="row3">
+      <div class="cell">NoRTH</div>
+      <div class="cell">Italian</div>
+      <div class="cell">North Austin</div>
+      <div class="cell">4 Stars</div>
+  </div>
+
+  <div class="row" id="row4">
+      <div class="cell">Perlas Seafood</div>
+      <div class="cell">Seafood</div>
+      <div class="cell">Downtown</div>
+      <div class="cell">5 Stars</div>
+  </div>
+
+  <div class="row" id="row5">
+      <div class="cell">Rudys</div>
+      <div class="cell">BBQ</div>
+      <div class="cell">North Austin, Downtown, South Austin, Round Rock,
+Dallas</div>
+      <div class="cell">3 Stars</div>
+  </div>
+
+  <div class="row" id="row6">
+      <div class="cell">Chuys</div>
+      <div class="cell">Tex Mex</div>
+      <div class="cell">North Austin, Downtown, South Austin</div>
+      <div class="cell">2 Star</div>
+  </div>
+
+  <div class="row" id="row7" data-id="7" data-type="Sushi" data-stars="3"
+data-area="downtown">
+      <div class="cell">Midoro</div>
+      <div class="cell">Sushi</div>
+      <div class="cell">Downtown</div>
+      <div class="cell">4 Star</div>
+  </div>
+
+</div> -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+
+  </body>
+</html>
